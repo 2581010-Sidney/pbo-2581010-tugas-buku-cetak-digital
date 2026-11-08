@@ -1,15 +1,27 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class TokoBuku {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+//    Hasil ketika baris super() di constuctor BukuDigital dihapus sementara
+//  pesan Error:
+//    java: constructor Buku in class Buku cannot be applied to given types;
+//    required: java.lang.String,java.lang.String,int
+//    found:    no arguments
+//    reason: actual and formal argument lists differ in length
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        Buku[] keranjang = {
+                new BukuCetak("Pemrograman Java", "John Doe",120000, 750),
+                new BukuCetak("Algoritma dasar", "Jane Smith", 95000,400),
+                new BukuDigital("Belajar OOP", "Ani Wijaya", 80000, 12.5)
+        };
+
+        System.out.println("=============== KERANJANG ===============");
+        int total =0;
+        for (Buku buku : keranjang){
+            buku.tampilkanInfo();
+            total += buku.hargaAkhir();
         }
+        System.out.println("-----------------------------------------");
+        System.out.println("Total bayar    : " + Buku.formatRupiah(total));
+
     }
 }
