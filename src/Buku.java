@@ -9,13 +9,23 @@ public class Buku {
         this.harga = harga;
     }
 
-    public int hargaAkhir(){
+    public String judul(){
+        return judul;
+    }
+
+    public int getHarga(){
         return harga;
     }
 
+    public abstract int hargaAkhir();
+
+    public abstract String keterangan();
+
     public void tampilkanInfo(){
-        System.out.println(judul + " (" + penulis+ ")");
-        System.out.println("  Harga      : " + formatRupiah(harga));
+        System.out.println(judul + " (" + penulis + ")");
+        System.out.println("  Harga       : " + formatRupiah(harga));
+        System.out.println("  Keterangan  : " + keterangan());
+        System.out.println("  Harga akhir : " + formatRupiah(hargaAkhir()));
     }
 
     protected static String formatRupiah(int angka){

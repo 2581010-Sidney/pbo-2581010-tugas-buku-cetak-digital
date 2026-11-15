@@ -13,14 +13,11 @@ public class BukuCetak extends Buku{
 
     @Override
     public int hargaAkhir() {
-        return super.hargaAkhir() + hitungOngkir();
+        return getHarga() + hitungOngkir();
     }
 
     @Override
-    public void tampilkanInfo(){
-        super.tampilkanInfo();
-        System.out.println("  Berat       : " + beratGram + " gram");
-        System.out.println("  Ongkir      : " + formatRupiah(hitungOngkir()));
-        System.out.println("  Harga akhir : " + formatRupiah(hargaAkhir()));
+    public String ketrangan(){
+        return beratGram + " gram, ongkir " + formatRupiah(hitungOngkir());
     }
 }
