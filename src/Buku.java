@@ -1,4 +1,4 @@
-public class Buku {
+public abstract class Buku {
     private String judul;
     private String penulis;
     private int harga;
@@ -9,7 +9,7 @@ public class Buku {
         this.harga = harga;
     }
 
-    public String judul(){
+    public String getJudul(){
         return judul;
     }
 

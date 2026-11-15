@@ -17,7 +17,7 @@ public class BukuCetak extends Buku{
     }
 
     @Override
-    public String ketrangan(){
+    public String keterangan(){
         return beratGram + " gram, ongkir " + formatRupiah(hitungOngkir());
     }
 }

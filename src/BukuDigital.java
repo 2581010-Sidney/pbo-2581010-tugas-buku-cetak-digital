@@ -1,4 +1,6 @@
-public class BukuDigital extends Buku{
+import java.util.Locale;
+
+public class BukuDigital extends Buku implements BisaDiunduh{
     private double ukuranMB;
 
     public BukuDigital(String judul, String penulis, int harga, double ukuranMB) {
@@ -8,13 +10,16 @@ public class BukuDigital extends Buku{
 
     @Override
     public int hargaAkhir() {
-        return  super.hargaAkhir()* 80/100;
+        return  getHarga()* 80/100;
     }
 
     @Override
-    public void tampilkanInfo(){
-        super.tampilkanInfo();
-        System.out.println("  Ukuran      : " + ukuranMB + " MB");
-        System.out.println("  Harga akhir : " + formatRupiah(hargaAkhir())+ " (diskon 20%)");
+    public String keterangan(){
+        return ukuranMB + " MB, diskon 20%";
+    }
+
+    @Override
+    public String linkUnduh() {
+        return "https://toko.buku/ebook/" + getJudul().toLowerCase().replace(' ', '-');
     }
 }
